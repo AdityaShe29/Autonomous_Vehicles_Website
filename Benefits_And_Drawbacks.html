@@ -1,0 +1,196 @@
+<!Doctype html>
+    <html>
+        <head>
+
+            <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Chivo&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+            <title>The Future of Transportation</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <style type = "text/css">
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    }
+
+                /* We have included the header, or in this case, navbar, css down below */
+
+                /* This is the overall header div css */
+                #navbar {
+                    z-index: 999;
+                    overflow: hidden;
+                    background-color: #555;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+                /* Within the header div css, we have included divs for each of the links */
+                #navbar a {
+                    float: left;
+                    display: block;
+                    color: #fff;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-size: 17px;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+                /* When the user hovers over one of the link divs, its colors change accordingly to below */
+                #navbar a:hover {
+                    background-color: #ddd;
+                    color: black;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+                /* When the user actively clicks on a link div, or the user is on the link div's webpage, it turns these colors */
+                #navbar a.active {
+                    background-color: #000;
+                    color: white;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+                /* This is the css that ensures that the header bar is always at the top of the webpage */
+                .sticky {
+                    position: fixed;
+                    top: 0;
+                    width: 100%;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+                /* This is some more css for the Impact specific pages css */
+                .Impact1 {
+                    margin: 0;
+                    padding-top: 40px;
+                    position: relative;
+                }
+
+                .Impact2 {
+                    margin: 0;
+                    padding: 0px;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+
+                }
+
+                .Impact2 img {
+                    max-width: 100%;
+                }
+
+                .centered {
+                    position: absolute;
+                    top: 15%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font: caption;
+                    font-size: 60px;
+                    text-align: center;
+                    background: -webkit-linear-gradient(rgb(212, 205, 205), rgb(0, 0, 0));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+            </style>
+
+            <body>
+
+                <!--This is the html below for the header, or navbar. Have a look at the css and the html to yeet -->
+                <!--understand how the classes control color in the navbar and the link divs.-->
+                <div id = "navbar">
+                    <a href="Home_Page.html">Home</a>
+                    <a class="active" href="Benefits_And_Drawbacks.html">Benefits and Drawbacks</a>
+                    <a href="Rationale.html">Rationale</a>
+                    <a href="Driver_Surveys.html">Driver Surveys</a>
+                    <a href="Login.Html">Contact Us</a>
+                </div>
+
+                <div class = "Impact1">
+                </div>
+
+                <div class = "Impact2">
+                    <img src = "tesla-roadster-4k-pd.jpg">
+                    <div class = "centered">The Benefits and Drawbacks of Autonomous Vehicles</div>
+                </div>
+
+                <div bottom = 0px padding-top = 40px>
+
+                        <img bottom = 0; padding-top = 40px float = left object-fit = contain position = relative width = 49.8% src = "Benefits of Autonomous Vehicles (1).png">
+
+
+
+                        <img bottom = 0; padding-top =40px float = right object-fit = contain position = relative width = 49.8% src = "Risks (2).png">
+
+
+
+                </div>
+            </body>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+            <!-- Everything below is important for the scripts. Do not change this stuff please... -->
+
+            <script type="text/javascript">
+
+                (function() {
+                window.onload = function() {myFunction()};
+
+                var navbar = document.getElementById("navbar");
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                    } else {
+                    navbar.classList.remove("sticky");
+                    }
+                }
+                    setTimeout(function() {
+                        $('.fly-in-text').removeClass('hidden');
+                    }, 500);
+                    var documentEl = $(document),
+                        parallaxBg = $('div.parallax-bg');
+
+                    documentEl.on('scroll', function() {
+                        var currScrollPos = documentEl.scrollTop();
+                        parallaxBg.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+                    });
+
+                    setTimeout(function() {
+                        $('.fly-in-texts').removeClass('hidden');
+                    }, 500);
+                    var documentEl = $(document),
+                        parallaxBg = $('div.parallax-bg');
+
+                    documentEl.on('scroll', function() {
+                        var currScrollPos = documentEl.scrollTop();
+                        parallaxBg.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+                    });
+
+
+                    var aboutEl = $('div.fade-in'),
+                            aboutElOffset = aboutEl.offset().top/2,
+                            documentEl = $(document);
+
+                        documentEl.on('scroll', function() {
+                            if ( documentEl.scrollTop() > aboutElOffset && aboutEl.hasClass('hidden') ) aboutEl.removeClass('hidden');
+                        });
+                    var aboutEl1 = $('div.town'),
+                                aboutElOffset1 = aboutEl1.offset().top/2,
+                                documentEl1 = $(document);
+
+                            documentEl1.on('scroll', function() {
+                                if ( documentEl1.scrollTop() > aboutElOffset1 && aboutEl1.hasClass('hidden') ) aboutEl1.removeClass('hidden');
+                            });
+
+
+
+
+
+                })();
+
+            </script>

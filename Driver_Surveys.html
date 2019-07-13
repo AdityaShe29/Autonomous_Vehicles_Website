@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Driver Surveys</title>
+    <style type = "text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h2, h3, h4, h5, h6
+      {
+        font-weight: normal;
+      }
+      .top-cont {
+        top: 0;
+        height: 400px;
+        background-color: #005c7a;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        line-height: 1.8;
+        background-size: cover;
+
+      }
+      .top-cont h1
+      {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 60px;
+        padding-top: 100px;
+        color: #fff;
+      }
+      .top-cont h3{
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20px;
+
+        color: #fff;
+      }
+      .top-cont h5{
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 15px;
+        padding-top: 100px;
+        color: #fff;
+      }
+
+      .quote-1{
+        height: 150px;
+        background: #fff;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: all 0.8s ease-out;
+      }
+      .quote-1 h2{
+        padding: 30px;
+      }
+      .quote-1 h3{
+        padding-left: 60px;
+      }
+      .quote-1 hr{
+        margin-top: 30px;
+      }
+      .quote-1.hidden1{
+        opacity: 0;
+      }
+      .quote-2{
+        height: 150px;
+        background: #fff;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: all 0.8s ease-out;
+      }
+      .quote-2 h2{
+        padding: 30px;
+      }
+      .quote-2 h3{
+        padding-left: 60px;
+      }
+      .quote-2 hr{
+        margin-top: 30px;
+      }
+      .quote-2.hidden2{
+        opacity: 0;
+      }
+      .quote-3{
+        height: 150px;
+        background: #fff;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: all 0.8s ease-out;
+      }
+      .quote-3 h2{
+        padding: 30px;
+      }
+      .quote-3 h3{
+        padding-left: 60px;
+      }
+      .quote-3 hr{
+        margin-top: 30px;
+      }
+      .quote-3.hidden3{
+        opacity: 0;
+      }
+      .quote-4{
+        height: 150px;
+        background: #fff;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: all 0.8s ease-out;
+      }
+      .quote-4 h2{
+        padding: 30px;
+      }
+      .quote-4 h3{
+        padding-left: 60px;
+      }
+      .quote-4 hr{
+        margin-top: 30px;
+      }
+      .quote-4.hidden4{
+        opacity: 0;
+      }
+      .quote-5{
+        height: 150px;
+        background: #fff;
+        font-family: 'Josefin Sans', sans-serif;
+        transition: all 0.8s ease-out;
+      }
+      .quote-5 h2{
+        padding: 30px;
+      }
+      .quote-5 h3{
+        padding-left: 60px;
+      }
+      .quote-5 hr{
+        margin-top: 30px;
+      }
+      .quote-5.hidden5{
+        opacity: 0;
+      }
+      .cont{
+        height: 500px;
+        background-color: #fff;
+      }
+
+      navbar {
+        margin: 0;
+        font-size: 28px;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+
+      #navbar {
+        z-index: 999;
+        overflow: hidden;
+        background: #555;
+        opacity: 1;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      #navbar a {
+        float: left;
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      #navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      #navbar a.active {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        font-family: 'Josefin Sans', sans-serif;
+
+      }
+    </style>
+  <body>
+    <div id = "navbar">
+      <a class="active" href="Home_Page.html">Home</a>
+      <a href="Benefits_And_Drawbacks.html">Benefits and Drawbacks</a>
+      <a href="Rationale.html">Rationale</a>
+      <a href="Driver_Surveys.html">Driver Surveys</a>
+      <a href="Login.html">Contact Us</a>
+    </div>
+    <div class="top-cont">
+      <h1>Driver Surveys</h1>
+      <h3>The following data was collected from a multitude of drivers around our township.</h3>
+      <h5>(Hover over space below to reveal text)</h5>
+    </div>
+    <div class="quote-1 hidden1" onmouseover="reveal1(true);">
+      <h2>Diksha, 38</h2>
+      <h3>"Self-driving cars will eliminate the risk of accidents in general, which could lower traffic."</h3>
+
+      <hr>
+    </div>
+    <div class="quote-2 hidden2" onmouseover="reveal2(true);">
+      <h2>Shefali, 24</h2>
+      <h3>"It eliminates the risk of accidents due to distracted driving."</h3>
+      <hr>
+    </div>
+    <div class="quote-3 hidden3" onmouseover="reveal3(true);">
+      <h2>Alex, 42</h2>
+      <h3>"I think the idea of autonomous cars is going to be very beneficial to society, and for other drivers in our town. I highly encourage the idea!"</h3>
+
+      <hr>
+    </div>
+    <div class="quote-4 hidden4" onmouseover="reveal4(true);">
+      <h2>Priti, 37</h2>
+      <h3>”I can get groceries quicker now! It will lower my burden. "</h3>
+      <hr>
+    </div>
+    <div class="quote-5 hidden5" onmouseover="reveal5(true);">
+      <h2>Aryan, 48</h2>
+      <h3>"This can help the environment by being gas efficient, meaning less emissions."</h3>
+      <hr>
+    </div>
+    <div class="cont">
+      <div class = "cont1">
+          <img style='height: 100%; width: 100%; object-fit: contain' src="Driver-Survey-Data.png">
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {myFunction()};
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      var aboutEl1 = $('div.quote-1'),
+              aboutElOffset1 = aboutEl1.offset().top/2,
+              documentEl1 = $(document);
+
+          function reveal1(x) {
+              if ( x==true && aboutEl1.hasClass('hidden1') ) aboutEl1.removeClass('hidden1');
+          };
+          var aboutEl2 = $('div.quote-2'),
+                  aboutElOffset2 = aboutEl2.offset().top/2,
+                  documentEl2 = $(document);
+
+                  function reveal2(x) {
+                      if ( x==true && aboutEl2.hasClass('hidden2') ) aboutEl2.removeClass('hidden2');
+                  };
+              var aboutEl3 = $('div.quote-3'),
+                      aboutElOffset3 = aboutEl3.offset().top/2,
+                      documentEl3 = $(document);
+
+                      function reveal3(x) {
+                          if ( x==true && aboutEl3.hasClass('hidden3') ) aboutEl3.removeClass('hidden3');
+                      };
+                  var aboutEl4 = $('div.quote-4'),
+                          aboutElOffset4 = aboutEl4.offset().top/2,
+                          documentEl4 = $(document);
+
+                          function reveal4(x) {
+                              if ( x==true && aboutEl4.hasClass('hidden4') ) aboutEl4.removeClass('hidden4');
+                          };
+                      var aboutEl5 = $('div.quote-5'),
+                              aboutElOffset5 = aboutEl5.offset().top/2,
+                              documentEl5 = $(document);
+
+                              function reveal5(x) {
+                                  if ( x==true && aboutEl5.hasClass('hidden5') ) aboutEl5.removeClass('hidden5');
+                              };
+    </script>
+  </body>
+</html>

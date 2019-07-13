@@ -1,0 +1,486 @@
+<!Doctype html>
+    <html>
+        <head>
+
+            <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Chivo&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+            <title>Implementing Autonomous Vehicles</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style type = "text/css">
+
+                /* Here is the code that ensures that each of the elements in the website extend to the height */
+                /* and width of the computer or mobile phone screen */
+
+                    * {
+                    margin: 0;
+                    padding: 0;
+                    }
+
+                /* We have included the header, or in this case, navbar, css down below */
+
+                    /* This is the overall header div css */
+                    #navbar {
+                    z-index: 999;
+                    overflow: hidden;
+                    background-color: #555;
+                    font-family: Open Sans, Arial;
+                    }
+
+                    /* Within the header div css, we have included divs for each of the links */
+                    #navbar a {
+                        float: left;
+                        display: block;
+                        color: #fff;
+                        text-align: center;
+                        padding: 14px 16px;
+                        text-decoration: none;
+                        font-size: 17px;
+                        font-family: 'Josefin Sans', sans-serif;
+                    }
+
+                    /* When the user hovers over one of the link divs, its colors change accordingly to below */
+                    #navbar a:hover {
+                        background-color: #ddd;
+                        color: black;
+                        font-family: 'Josefin Sans', sans-serif;
+                    }
+
+                    /* When the user actively clicks on a link div, or the user is on the link div's webpage, it turns these colors */
+                    #navbar a.active {
+                        background-color: #000;
+                        color: white;
+                        font-family: 'Josefin Sans', sans-serif;
+                    }
+
+                    /* This is the css that ensures that the header bar is always at the top of the webpage */
+                    .sticky {
+                        position: fixed;
+                        top: 0;
+                        width: 100%;
+                        font-family: 'Josefin Sans', sans-serif;
+                    }
+
+                /* Ok, so here is the code for the flying text animation. This is just the css, controlling how the text actually looks like. */
+                /* Also, the way it works is the same way the subclasses in the navbar work. Anything after the class name controls how that element works in the */
+                /* class. For example, ".navbar a" controls the way the navbar class works with links, which are represented by the letter a. */
+
+                    .fly-in-text {
+                        list-style: none;
+                        left: 50%;
+                        top: -5%;
+                        transform: translateX(-50%) translateY(-50%);
+                        width: 100%;
+                        text-align: center;
+                        position: absolute;
+                        padding-top: 390px;
+                    }
+
+                    .fly-in-text li {
+                        display: inline-block;
+                        margin-right: 0px;
+                        font-family: 'Chivo', sans-serif;
+                        font-weight: 900;
+                        font-size: 5em;
+                        color: rgb(0, 0, 0);
+                        opacity: 1;
+                        transition: all 2.5s ease;
+                        letter-spacing: 1.5;
+                    }
+
+                    .fly-in-text li:last-child {
+                        margin-right: 0;
+                    }
+
+                    .fly-in-text.hidden li {
+                        opacity: 0;
+                    }
+
+                    .fly-in-texts {
+                        text-align: center;
+                        list-style: none;
+                        position: absolute;
+                        left: 50%;
+                        top: -5%;
+                        transform: translateX(-50%) translateY(-50%);
+                        width: 100%;
+                        padding-top: 530px;
+                    }
+
+                    .fly-in-texts li {
+                        display: inline-block;
+                        margin-right: 0px;
+                        font-family: 'Chivo', sans-serif;
+                        font-weight: 900;
+                        font-size: 5em;
+                        color: rgb(0, 0, 0);
+                        opacity: 1;
+                        margin-top: 30px;
+                        transition: all 2.5s ease;
+                        letter-spacing: 1.5;
+                    }
+
+                    .fly-in-texts li:last-child {
+                        margin-right: 0;
+                    }
+
+                    .fly-in-texts.hidden li {
+                        opacity: 0;
+                    }
+
+                    /* Ok, hold up, the stuff below controls each of the individual letters. The letters are in a list, so each of these control */
+                    /* , well the nth term in each of the lists. Simple stuff, really. (Not really) Thanks shiv lol */
+
+                    .fly-in-text.hidden li:nth-child(1) { transform: translateX(-400px) translateY(100px); }
+                    .fly-in-text.hidden li:nth-child(2) { transform: translateX(-300px) translateY(-300px); }
+                    .fly-in-text.hidden li:nth-child(3) { transform: translateX(200px) translateY(400px); }
+                    .fly-in-text.hidden li:nth-child(4) { transform: translateX(500px) translateY(400px); }
+                    .fly-in-text.hidden li:nth-child(5) { transform: translateX(200px) translateY(-600px); }
+                    .fly-in-text.hidden li:nth-child(6) { transform: translateX(-400px) translateY(300px); }
+                    .fly-in-text.hidden li:nth-child(7) { transform: translateX(400px) translateY(400px); }
+                    .fly-in-text.hidden li:nth-child(8) { transform: translateX(-100px) translateY(-100px); }
+                    .fly-in-text.hidden li:nth-child(9) { transform: translateX(-200px) translateY(200px); }
+                    .fly-in-text.hidden li:nth-child(10) { transform: translateX(100px) translateY(400px); }
+
+
+
+                    .fly-in-texts.hidden li:nth-child(1) { transform: translateX(-400px) translateY(00px); }
+                    .fly-in-texts.hidden li:nth-child(2) { transform: translateX(-400px) translateY(00px); }
+                    .fly-in-texts.hidden li:nth-child(3) { transform: translateX(-400px) translateY(00px); }
+                    .fly-in-texts.hidden li:nth-child(4) { transform: translateX(-400px) translateY(00px); }
+                    .fly-in-texts.hidden li:nth-child(5) { transform: translateX(-400px) translateY(00px); }
+
+
+
+                /* Next, here is the code for the parallax scrolling and the first background image. */
+                /* Remember that the padding controls the size of the image in this instance. */
+
+
+                    .parallax-bg {
+                        height: 550px;
+                        background-image: url("Home Page Photo 1.jpg");
+                        background-size: cover;
+                        background-attachment: fixed;
+                      }
+                /* I honestly don't know what this does, but it's important, ok? */
+                    .content {
+                        width: 100%;
+                        background-color: rgb(133, 52, 52);
+                    }
+
+                /* This is the fade in functionality of the div that contains the floating and flying text */
+                    .fade-in{
+                        color: #000;
+                        font-family: 'Josefin Sans', sans-serif;
+                        text-align: center;
+                        transform: translateY(60px);
+                        transition: all 0.8s ease-out;
+                    }
+
+                    .fade-in.hidden {
+                        opacity: 0;
+                    }
+                    .foo{
+                      height: 1px;
+                      background: #000;
+                      width: 100%;
+                    }
+
+                /* This is some css for the vido part of the website on the home page. There is text that is overlayed over the video. */
+                .container {
+                  height: 800px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  overflow: hidden;
+                  position: relative;
+                  z-index: -50;
+
+                }
+                    .color-overlay{
+                      position: fixed;
+                      background-color: #ddd;
+                      width: 100%;
+                      height: 100vh;
+                      opacity: 0;
+                      padding: 0;
+                      margin: 0;
+                    }
+
+                .container1 {
+                  position: absolute;
+                  width: 100%;
+                    }
+
+                .intro{
+                  text-align: center;
+                  font-family: 'Josefin Sans', sans-serif;
+                  line-height: 1.8;
+                  z-index: 1;
+                  opacity: 0.9;
+                  width: 50%;
+                  background: ghostwhite;
+                  padding: 20px;
+                }
+
+                .overlay {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+
+                    text-align: center;
+                    font-family: 'Josefin Sans', sans-serif;
+                    padding: 0;
+                    line-height: 1.8;
+                    z-index: 1;
+                    opacity: 0.9;
+                    transform: translateY(50px);
+                    transition: all 0.8s ease-out;
+                    padding-bottom: 20%;
+                    }
+                    .overlay.hidden{
+                      opacity: 0;
+                    }
+
+                .Block3 {
+
+                    bottom: 0;
+                    height: 80%;
+                  align-items: center;
+                  justify-content: center;
+                  overflow: hidden;
+                  background-color: #CECED0;
+                  font-family: 'Josefin Sans', sans-serif;
+                  transition: all 0.8s ease-out;
+                }
+                .Block3.hidden{
+                  opacity: 0.2;
+                }
+
+                .Block3-1 {
+                    position: relative;
+                    font: caption;
+                    font-size: 50px;
+                    width: 33%;
+                    text-align: center;
+                    padding: 40px;
+                    color: black;
+                    float: left;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+                .Block3-1 h4{
+                  padding-left: 40px;
+                  font-family: 'Josefin Sans', sans-serif;
+                }
+
+                .Block3-1 p{
+                    position: relative;
+                    font: caption;
+                    font-size: 25px;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    padding: 40px;
+                    color: black;
+                    float: left;
+                    line-height: 1.8;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+
+                .Block3-2 {
+                    position: relative;
+                    font: caption;
+                    right: 0;
+                    top: 50%;
+                    width: 50%;
+                    text-align: center;
+                    padding: 40px;
+                    float: right;
+                    font-family: 'Josefin Sans', sans-serif;
+                }
+                .work-video{
+                  transform: translateX(110px);
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+            <!--This is the html below for the header, or navbar. Have a look at the css and the html to yeet -->
+            <!--understand how the classes control color in the navbar and the link divs.-->
+            <div id = "navbar">
+              <a class="active" href="Home_Page.html">Home</a>
+              <a href="Benefits_And_Drawbacks.html">Benefits and Drawbacks</a>
+              <a href="Rationale.html">Rationale</a>
+              <a href="Driver_Surveys.html">Driver Surveys</a>
+              <a href="Login.html">Contact Us</a>
+            </div>
+
+            <!--This is the html controlling the first line of text, which is "Autonomous Vehicles"-->
+            <!--Notice how the class for this is fly-in-text, not fly-in-texts-->
+            <div class="content">
+                    <div class="parallax-bg">
+                        <ul class = "fly-in-text hidden">
+                          <li>A</li>
+                          <li>U</li>
+                          <li>T</li>
+                          <li>O</li>
+                          <li>N</li>
+                          <li>O</li>
+                          <li>M</li>
+                          <li>O</li>
+                          <li>U</li>
+                          <li>S</li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!--This is the html controlling the second line of text, which is "The Future of Transportation"-->
+                <!--Notice how the class for this is fly-in-texts, not fly-in-text-->
+                <div class="content">
+                        <div class="parallax-bg">
+                            <ul class = "fly-in-texts hidden">
+                              <li>P</li>
+                              <li>R</li>
+                              <li>I</li>
+                              <li>M</li>
+                              <li>E</li>
+
+
+                            </ul>
+                        </div>
+
+                        
+                    </div>
+                    <div class="foo">
+
+                    </div>
+
+                    <div class = "container1">
+                      <div class="color-overlay"></div>
+
+
+                        <div position = relative class = "container">
+
+                            <video width = 100% loop autoplay muted >
+                                    <source src="Editor.mp4" type="video/mp4">
+                                    <source src="Editor.ogg" type="video/ogg">
+
+                            </video>
+                        </div>
+
+
+                    </div>
+        <div class = "overlay hidden">
+                <div class = "intro">
+                    <h1> Revolutionizing the Road </h1>
+                    <h3> Our road has remained relatively unchanged for the past decades, and innovation is due. Our transportation is growing, and is becoming a larger part of our world
+                        with each year that passes. Implementing autonomous cars is a step into a brighter future. These revolutions in technology and in our society are pushing the limits of human
+                        creativity and engineering. Today, scientists, engineers, and people around the world are working to bring the future to us. Introducing, autonomous vehicles.
+                    </h3>
+                </div>
+        </div>
+
+        <div class = "Block3 hidden">
+            <div class = "Block3-1">
+                <h4>How does this technology work?</h4>
+                <p>Self driving vehicles are created primarily using software in association with LiDAR (Light Detection and Ranging). LiDAR is a technology that allows autonomous vehicles to "see" what is happening around them, and paired with software, allows for the vehicle to recognize different objects, including traffic signs, traffic lights, other cars, speed limits and bumps, people, and cyclists. After processing this data, the software in the car decides to brake, accelerate, turn in relation to the final destination, or deploy airbags.</p>
+            </div>
+
+            <div class = "Block3-2">
+                <img style='height: 100%; width: 100%; object-fit: contain' src="HowTheyWork.png">
+            </div>
+            <div class = "work-video">
+
+                <video style="width: 50%" loop autoplay muted >
+                        <source src="Full Self-Driving.mp4" type="video/mp4">
+                </video>
+            </div>
+            <br> <br> <br> <br>
+</div>
+
+        <div>
+
+        </div>
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+        <!-- Scripts are Below -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <script type="text/javascript">
+
+            (function() {
+              window.onload = function() {myFunction()};
+
+              var navbar = document.getElementById("navbar");
+              var sticky = navbar.offsetTop;
+
+              function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                  navbar.classList.add("sticky")
+                } else {
+                  navbar.classList.remove("sticky");
+                }
+              }
+                setTimeout(function() {
+                    $('.fly-in-text').removeClass('hidden');
+                  }, 500);
+                var documentEl = $(document),
+                    parallaxBg = $('div.parallax-bg');
+
+                documentEl.on('scroll', function() {
+                    var currScrollPos = documentEl.scrollTop();
+                    parallaxBg.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+                });
+
+                setTimeout(function() {
+                    $('.fly-in-texts').removeClass('hidden');
+                  }, 500);
+                var documentEl = $(document),
+                    parallaxBg = $('div.parallax-bg');
+
+                documentEl.on('scroll', function() {
+                    var currScrollPos = documentEl.scrollTop();
+                    parallaxBg.css('background-position', '0 ' + -currScrollPos/4 + 'px');
+                });
+
+
+                var aboutEl = $('div.overlay'),
+                        aboutElOffset = aboutEl.offset().top/2,
+                        documentEl = $(document);
+
+                    documentEl.on('scroll', function() {
+                        if ( documentEl.scrollTop() > aboutElOffset && aboutEl.hasClass('hidden') ) aboutEl.removeClass('hidden');
+                    });
+                var aboutEl1 = $('div.Block3'),
+                            aboutElOffset1 = aboutEl1.offset().top/2,
+                            documentEl1 = $(document);
+
+                        documentEl1.on('scroll', function() {
+                            if ( documentEl1.scrollTop() > aboutElOffset1 && aboutEl1.hasClass('hidden') ) aboutEl1.removeClass('hidden');
+                        });
+
+
+
+
+
+            })();
+
+        </script>
+
+        </body>
+
+    </html>
